@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/Logo/logoBlackfavicon.ico";
 import "./Navbar.css";
 
-export default function Navbar(props) {
+export default function Navbar() {
 	return (
 		<div>
 			<nav className="navbar navbar-light navColor fixed-top">
@@ -17,17 +18,17 @@ export default function Navbar(props) {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="d-flex me-auto px-4">
-						<a className="navbar-brand" href="#">
+						<Link className="navbar-brand" to="/">
 							<img
 								className="logo"
 								src={logo}
 								alt="logo of dataVod"
 							/>
-						</a>
+						</Link>
 					</div>
 					<div
 						className="offcanvas offcanvas-start navColor"
-						tabindex="-1"
+						tabIndex="-1"
 						id="offcanvasNavbar"
 						aria-labelledby="offcanvasNavbarLabel"
 					>
@@ -38,30 +39,30 @@ export default function Navbar(props) {
 								data-bs-dismiss="offcanvas"
 								aria-label="Close"
 							></button>
-							<a className="navbar-brand" href="#">
+							<Link className="navbar-brand" to="">
 								<img
 									className="logo"
 									src={logo}
 									alt="logo of dataVod"
 								/>
-							</a>
+							</Link>
 						</div>
 						<div className="offcanvas-body">
 							<ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
 								<li className="nav-item">
-									<a className="nav-link " to="/">
+									<Link className="nav-link " to="/">
 										Home
-									</a>
+									</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" to="/videos/all">
+									<Link className="nav-link" to="/videos/all">
 										All Videos
-									</a>
+									</Link>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" to="/videos/all">
+									<Link className="nav-link" to="/videos/all">
 										All Users
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>
