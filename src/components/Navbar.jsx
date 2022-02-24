@@ -17,17 +17,15 @@ export default function Navbar(props) {
 					>
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					{props.signup === false && !props.loggedIn && (
-						<div className="d-flex me-auto px-4">
-							<Link className="navbar-brand" to="/">
-								<img
-									className="logo"
-									src={logo}
-									alt="logo of dataVod"
-								/>
-							</Link>
-						</div>
-					)}
+					<div className="d-flex me-auto px-4">
+						<Link className="navbar-brand" to="/homepage">
+							<img
+								className="logo"
+								src={logo}
+								alt="logo of dataVod"
+							/>
+						</Link>
+					</div>
 					<div
 						className="offcanvas offcanvas-start navColor"
 						tabIndex="-1"
@@ -52,7 +50,7 @@ export default function Navbar(props) {
 						<div className="offcanvas-body">
 							<ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
 								<li className="nav-item">
-									<Link className="nav-link " to="/">
+									<Link className="nav-link " to="/homepage">
 										Home
 									</Link>
 								</li>
