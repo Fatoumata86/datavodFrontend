@@ -6,6 +6,19 @@
 	font-size: 24px;
 }
 
+.nav-link {
+	color: black;
+	font-family: "Montserrat-Black", sans-serif;
+}
+
+.nav-link:hover {
+	background-color: #00a8cc;
+}
+
 .icon-black {
 	color: black;
+}
+
+.icon-black:hover {
+	color: #00a8cc;
 }

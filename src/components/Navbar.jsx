@@ -50,7 +50,7 @@ export default function Navbar(props) {
 						<div className="offcanvas-body">
 							<ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
 								<li className="nav-item">
-									<Link className="nav-link " to="/homepage">
+									<Link className="nav-link" to="/homepage">
 										Home
 									</Link>
 								</li>
@@ -69,13 +69,19 @@ export default function Navbar(props) {
 					</div>
 					<div className="d-flex">
 						{props.signup === false && !props.loggedIn && (
-							<a className="icon-playlist icon-black me-4">
+							<Link
+								to="/playlist"
+								className="icon-playlist icon-black me-4"
+							>
 								<ion-icon name="logo-youtube"></ion-icon>
-							</a>
+							</Link>
 						)}
-						<a className="icon-connection icon-black me-4">
+						<Link
+							to="/login"
+							className="icon-connection icon-black me-4"
+						>
 							<ion-icon name="person"></ion-icon>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</nav>

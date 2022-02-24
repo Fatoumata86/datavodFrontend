@@ -8,7 +8,7 @@ export default function HomePage() {
 		<>
 			<Navbar />
 			<div className="homepage d-flex flex-column align-items-center justify-content-center">
-				<h3 className="homepage-text fw-bold">
+				<h3 className="homepage-text text-uppercase fw-bold fs-2 py-4">
 					Need a dose of entertainment ?
 				</h3>
 				<Link to="/homepage" className="btn homepage-btn">
