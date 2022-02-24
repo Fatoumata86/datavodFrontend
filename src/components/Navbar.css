@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Montserrat:wght@300;400;900&display=swap");
+
+.navColor {
+	background-color: #142850;
+	font-family: "Lato", sans-serif;
+	font-size: 24px;
+}
+
+.icon-black {
+	color: black;
+}
