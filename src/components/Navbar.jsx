@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/Logo/logoBlackfavicon.ico";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar(props) {
 	return (
 		<div>
 			<nav className="navbar navbar-light navColor fixed-top">
@@ -17,15 +17,17 @@ export default function Navbar() {
 					>
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="d-flex me-auto px-4">
-						<Link className="navbar-brand" to="/">
-							<img
-								className="logo"
-								src={logo}
-								alt="logo of dataVod"
-							/>
-						</Link>
-					</div>
+					{props.signup === false && !props.loggedIn && (
+						<div className="d-flex me-auto px-4">
+							<Link className="navbar-brand" to="/">
+								<img
+									className="logo"
+									src={logo}
+									alt="logo of dataVod"
+								/>
+							</Link>
+						</div>
+					)}
 					<div
 						className="offcanvas offcanvas-start navColor"
 						tabIndex="-1"
@@ -68,9 +70,11 @@ export default function Navbar() {
 						</div>
 					</div>
 					<div className="d-flex">
-						<a className="icon-playlist icon-black me-4">
-							<ion-icon name="logo-youtube"></ion-icon>
-						</a>
+						{props.signup === false && !props.loggedIn && (
+							<a className="icon-playlist icon-black me-4">
+								<ion-icon name="logo-youtube"></ion-icon>
+							</a>
+						)}
 						<a className="icon-connection icon-black me-4">
 							<ion-icon name="person"></ion-icon>
 						</a>

@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./components/Homepage";
+import HomePage from "./components/HomePage";
 
 function App() {
 	return (
