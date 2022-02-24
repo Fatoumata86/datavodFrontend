@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Montserrat:wght@300;400;900&display=swap");
 
-.homepage {
+.welcomepage {
 	background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
 		url("../assets/images/HomepagePic.jpg");
 	background-size: cover;
@@ -9,18 +9,18 @@
 	width: 100vw;
 }
 
-.homepage-text {
+.welcomepage-text {
 	color: #eeeeee;
 	font-family: "Montserrat-Black", sans-serif;
 }
 
-.homepage-btn {
+.welcomepage-btn {
 	background-color: #00a8cc;
 	color: #eeeeee;
 	font-family: "Montserrat", sans-serif;
 }
 
-.homepage-btn:hover {
+.welcomepage-btn:hover {
 	background-color: #142850;
 	color: #eeeeee;
 }

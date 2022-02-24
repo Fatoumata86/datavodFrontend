@@ -4,6 +4,8 @@ import "bootstrap/dist/js/bootstrap.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Welcome from "./components/WelcomePage";
 import HomePage from "./components/HomePage";
+import UsersPage from "./components/UsersPage";
+import VideoCard from "./components/VideoCard";
 
 function App() {
 	return (
@@ -14,8 +16,8 @@ function App() {
 					<Route path="/homepage" element={<HomePage />}></Route>
 					<Route path="/users/signup"></Route>
 					<Route path="/users/login"></Route>
-					<Route path="/users/all"></Route>
-					<Route path="/videos/all"></Route>
+					<Route path="/users/all" element={<UsersPage />}></Route>
+					<Route path="/videos/all" element={<VideoCard />}></Route>
 					<Route path="*"></Route>
 				</Routes>
 			</div>
