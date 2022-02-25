@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
 import UserCard from "./UserCard";
 
 import "./UsersPage.css";
@@ -14,9 +13,8 @@ export default function UsersPage() {
 	console.log(`users`, users);
 	return (
 		<>
-			<Navbar />
-			<div className="card-group">
-				<div className="card">
+			<div className="bg-color">
+				<div className="d-flex justify-content-around flex-wrap my-5">
 					{users.length !== 0 &&
 						users.map((user) => <UserCard user={user} />)}
 				</div>

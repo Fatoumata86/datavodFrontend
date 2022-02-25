@@ -6,11 +6,13 @@ import Welcome from "./components/WelcomePage";
 import HomePage from "./components/HomePage";
 import UsersPage from "./components/UsersPage";
 import VideoCard from "./components/VideoCard";
+import Navbar from "./components/Navbar";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<div className="App">
+				<Navbar />
 				<Routes>
 					<Route exact path="/" element={<Welcome />}></Route>
 					<Route path="/homepage" element={<HomePage />}></Route>

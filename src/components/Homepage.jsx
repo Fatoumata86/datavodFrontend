@@ -1,19 +1,19 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
-import Navbar from "./Navbar";
+import VideoCard from "./VideoCard";
 
 export default function HomePage() {
+	const [videos, setVideos] = useState([]);
 	useEffect(() => {
-		videoList();
-	});
-	const videoList = () => {
-		axios.get(`http://localhost:8000/videos/all`);
-	};
+		fetch("http://localhost:8000/videos/all")
+			.then((res) => res.json())
+			.then((data) => setVideos(data.videos));
+	}, []);
+	console.log(`videos`, videos);
 	return (
 		<>
-			<Navbar />
-			<div className="bg-color"></div>
+			{videos.length !== 0 &&
+				videos.map((video) => <VideoCard video={video} />)}
 		</>
 	);
 }

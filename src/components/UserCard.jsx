@@ -6,13 +6,16 @@ export default function UserCard(props) {
 
 	return (
 		<>
-			<div className="card my-3 rounded" style={{ width: "18rem" }}>
+			<div
+				className="card my-4 col-4"
+				style={{ width: "280px", height: "350px" }}
+			>
 				<img
 					src={`http://localhost:8000${avatar}`}
-					className="card-img-top"
+					className="rounded mx-auto d-block"
 					alt={`${userName},avatar`}
 				/>
-				<div className="card-body">
+				<div className="container text-center mt-4 card-body">
 					<h5 className="card-title">{firstName}</h5>
 					<h5 className="card-title">{lastName}</h5>
 					<h5 className="card-title">{userName}</h5>
