@@ -7,6 +7,8 @@ import HomePage from "./components/HomePage";
 import UsersPage from "./components/UsersPage";
 import VideoCard from "./components/VideoCard";
 import Navbar from "./components/Navbar";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 function App() {
 	return (
@@ -16,8 +18,8 @@ function App() {
 				<Routes>
 					<Route exact path="/" element={<Welcome />}></Route>
 					<Route path="/homepage" element={<HomePage />}></Route>
-					<Route path="/users/signup"></Route>
-					<Route path="/users/login"></Route>
+					<Route path="/users/signup" element={<Signup />}></Route>
+					<Route path="/users/login" element={<Login />}></Route>
 					<Route path="/users/all" element={<UsersPage />}></Route>
 					<Route path="/videos/all" element={<VideoCard />}></Route>
 					<Route path="*"></Route>

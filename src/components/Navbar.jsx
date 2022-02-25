@@ -77,7 +77,7 @@ export default function Navbar(props) {
 							</Link>
 						)}
 						<Link
-							to="/login"
+							to="/users/signup"
 							className="icon-connection icon-black me-4"
 						>
 							<ion-icon name="person"></ion-icon>
