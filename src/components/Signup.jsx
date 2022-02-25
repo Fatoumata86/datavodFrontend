@@ -1,5 +1,7 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Signup.css";
 
 export default function Signup(setUserID) {
 	const navigate = useNavigate();
@@ -39,21 +41,22 @@ export default function Signup(setUserID) {
 
 	const handleSignup = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:8000/users/signup", {
-			firstName,
-			lastName,
-			userName,
-			city,
-			avatar,
-			email,
-			password,
-			passwordConfirm,
-		})
+		axios
+			.post("http://localhost:8000/users/signup", {
+				firstName,
+				userName,
+				lastName,
+				city,
+				avatar,
+				email,
+				password,
+				passwordConfirm,
+			})
 			.then((res) => {
 				console.log(res);
 				localStorage.setItem("userId", res.data.user._id);
 				setUserID(res.data.user._id);
-				navigate("/users/profile");
+				navigate("/users/profil");
 			})
 			.catch((e) => {
 				console.log("error", e.response);
@@ -61,9 +64,12 @@ export default function Signup(setUserID) {
 	};
 	return (
 		<>
-			<div className="bg-color d-flex justify-content-center">
-				<form onSubmit={handleSignup} className="container p-5 col-6">
-					<h1 className="text-center">SignUp</h1>
+			<div className="d-flex justify-content-center">
+				<form
+					onSubmit={handleSignup}
+					className="bg-color rounded container m-4 py-2 px-5 col-6"
+				>
+					<h1 className="text-center">Signup</h1>
 					<div className="row mb-4">
 						<div className="col">
 							<div className="form-outline">
@@ -142,27 +148,33 @@ export default function Signup(setUserID) {
 							onChange={emailChange}
 						/>
 					</div>
-					<div className="form-outline mb-4">
-						<label>Password</label>
-						<input
-							name="password"
-							type="password"
-							className="form-control"
-							placeholder="Enter Password"
-							value={password}
-							onChange={passwordChange}
-						/>
-					</div>
-					<div className="form-outline mb-4">
-						<label>Confirm password</label>
-						<input
-							name="passwordConfirm"
-							type="passwordConfirm"
-							className="form-control"
-							placeholder="Confirm your password"
-							value={passwordConfirm}
-							onChange={passwordConfirmChange}
-						/>
+					<div className="row mb-4">
+						<div className="col">
+							<div className="form-outline">
+								<label>Password</label>
+								<input
+									name="password"
+									type="password"
+									className="form-control"
+									placeholder="Enter Password"
+									value={password}
+									onChange={passwordChange}
+								/>
+							</div>
+						</div>
+						<div className="col">
+							<div className="form-outline">
+								<label>Confirm password</label>
+								<input
+									name="passwordConfirm"
+									type="password"
+									className="form-control"
+									placeholder="Confirm your password"
+									value={passwordConfirm}
+									onChange={passwordConfirmChange}
+								/>
+							</div>
+						</div>
 					</div>
 					<Link to="/users/:id">
 						<div className="d-grid gap-2">

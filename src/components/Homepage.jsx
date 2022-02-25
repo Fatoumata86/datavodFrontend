@@ -9,11 +9,13 @@ export default function HomePage() {
 			.then((res) => res.json())
 			.then((data) => setVideos(data.videos));
 	}, []);
-	console.log(`videos`, videos);
+	// console.log(`videos`, videos);
 	return (
 		<>
-			{videos.length !== 0 &&
-				videos.map((video) => <VideoCard video={video} />)}
+			<div className="bg-color d-flex justify-content-center flex-wrap">
+				{videos.length !== 0 &&
+					videos.map((video) => <VideoCard video={video} />)}
+			</div>
 		</>
 	);
 }
