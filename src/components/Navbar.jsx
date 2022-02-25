@@ -6,7 +6,7 @@ import "./Navbar.css";
 export default function Navbar(props) {
 	return (
 		<div>
-			<nav className="navbar navbar-light navColor fixed-top">
+			<nav className="navbar navbar-light navColor">
 				<div className="container-fluid">
 					<button
 						className="navbar-toggler"

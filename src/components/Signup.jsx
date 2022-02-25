@@ -6,6 +6,8 @@ export default function Signup(setUserID) {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [userName, setUsername] = useState("");
+	const [city, setCity] = useState("");
+	const [avatar, setAvatar] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -18,6 +20,12 @@ export default function Signup(setUserID) {
 	};
 	const userNameChange = (e) => {
 		setUsername(e.target.value);
+	};
+	const cityChange = (e) => {
+		setCity(e.target.value);
+	};
+	const avatarChange = (e) => {
+		setAvatar(e.target.value);
 	};
 	const emailChange = (e) => {
 		setEmail(e.target.value);
@@ -35,6 +43,8 @@ export default function Signup(setUserID) {
 			firstName,
 			lastName,
 			userName,
+			city,
+			avatar,
 			email,
 			password,
 			passwordConfirm,
@@ -51,43 +61,77 @@ export default function Signup(setUserID) {
 	};
 	return (
 		<>
-			<div className="signupForm">
-				<form onSubmit={handleSignup}>
-					<h1>SignUp</h1>
-					<div className="form-group">
-						<label>First name</label>
+			<div className="bg-color d-flex justify-content-center">
+				<form onSubmit={handleSignup} className="container p-5 col-6">
+					<h1 className="text-center">SignUp</h1>
+					<div className="row mb-4">
+						<div className="col">
+							<div className="form-outline">
+								<label>First name</label>
+								<input
+									name="firstName"
+									type="text"
+									className="form-control"
+									placeholder="Enter First name"
+									value={firstName}
+									onChange={firstNameChange}
+								/>
+							</div>
+						</div>
+						<div className="col">
+							<div className="form-outline">
+								<label>Last name</label>
+								<input
+									name="lastName"
+									type="text"
+									className="form-control"
+									placeholder="Enter Last name"
+									value={lastName}
+									onChange={lastNameChange}
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="row mb-4">
+						<div className="col">
+							<div className="form-outline">
+								<label>User name</label>
+								<input
+									name="userName"
+									type="text"
+									className="form-control"
+									placeholder="Enter User name"
+									value={userName}
+									onChange={userNameChange}
+								/>
+							</div>
+						</div>
+						<div className="col">
+							<div className="form-outline">
+								<label>City</label>
+								<input
+									name="city"
+									type="text"
+									className="form-control"
+									placeholder="Enter City"
+									value={city}
+									onChange={cityChange}
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="form-outline mb-4">
+						<label for="formFile">Avatar</label>
 						<input
-							name="firstName"
-							type="text"
-							className="form-control"
-							placeholder="Enter First name"
-							value={firstName}
-							onChange={firstNameChange}
+							name="avatar"
+							class="form-control"
+							type="file"
+							id="formFile"
+							value={avatar}
+							onChange={avatarChange}
 						/>
 					</div>
-					<div className="form-group">
-						<label>Last name</label>
-						<input
-							name="lastName"
-							type="text"
-							className="form-control"
-							placeholder="Enter Last name"
-							value={lastName}
-							onChange={lastNameChange}
-						/>
-					</div>
-					<div className="form-group">
-						<label>User name</label>
-						<input
-							name="userName"
-							type="text"
-							className="form-control"
-							placeholder="Enter User name"
-							value={userName}
-							onChange={userNameChange}
-						/>
-					</div>
-					<div className="form-group">
+					<div className="form-outline mb-4">
 						<label>Email</label>
 						<input
 							name="email"
@@ -98,7 +142,7 @@ export default function Signup(setUserID) {
 							onChange={emailChange}
 						/>
 					</div>
-					<div className="form-group">
+					<div className="form-outline mb-4">
 						<label>Password</label>
 						<input
 							name="password"
@@ -109,7 +153,7 @@ export default function Signup(setUserID) {
 							onChange={passwordChange}
 						/>
 					</div>
-					<div className="form-group">
+					<div className="form-outline mb-4">
 						<label>Confirm password</label>
 						<input
 							name="passwordConfirm"
@@ -121,9 +165,14 @@ export default function Signup(setUserID) {
 						/>
 					</div>
 					<Link to="/users/:id">
-						<button type="submit" className="btn btn-primary">
-							Submit
-						</button>
+						<div className="d-grid gap-2">
+							<button
+								type="submit"
+								className="btn btn-primary mb-4"
+							>
+								Submit
+							</button>
+						</div>
 					</Link>
 				</form>
 			</div>

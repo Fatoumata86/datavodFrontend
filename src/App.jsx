@@ -9,6 +9,7 @@ import VideoCard from "./components/VideoCard";
 import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import Profil from "./components/Profil";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/homepage" element={<HomePage />}></Route>
 					<Route path="/users/signup" element={<Signup />}></Route>
 					<Route path="/users/login" element={<Login />}></Route>
+					<Route path="/users/:id" element={<Profil />}></Route>
 					<Route path="/users/all" element={<UsersPage />}></Route>
 					<Route path="/videos/all" element={<VideoCard />}></Route>
 					<Route path="*"></Route>

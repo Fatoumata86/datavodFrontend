@@ -8,10 +8,10 @@ export default function UsersPage() {
 			.then((res) => res.json())
 			.then((data) => setUsers(data.users));
 	}, []);
-	console.log(`users`, users);
+	// console.log(`users`, users);
 	return (
 		<>
-			<div className="bg-color d-flex justify-content-center flex-wrap mt-5">
+			<div className="bg-color d-flex justify-content-center flex-wrap">
 				{users.length !== 0 &&
 					users.map((user) => <UserCard user={user} />)}
 			</div>
