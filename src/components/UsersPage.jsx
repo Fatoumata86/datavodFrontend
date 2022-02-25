@@ -13,11 +13,9 @@ export default function UsersPage() {
 	console.log(`users`, users);
 	return (
 		<>
-			<div className="bg-color">
-				<div className="d-flex justify-content-around flex-wrap my-5">
-					{users.length !== 0 &&
-						users.map((user) => <UserCard user={user} />)}
-				</div>
+			<div className="bg-color d-flex justify-content-center flex-wrap mt-5">
+				{users.length !== 0 &&
+					users.map((user) => <UserCard user={user} />)}
 			</div>
 		</>
 	);
