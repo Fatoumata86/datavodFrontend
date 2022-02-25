@@ -12,10 +12,10 @@ export default function UserCard(props) {
 					className="rounded mx-auto my-2"
 					alt={`${userName},avatar`}
 				/>
-				<div className="container text-center mt-4 card-body">
-					<h5 className="card-title">{firstName}</h5>
-					<h5 className="card-title">{lastName}</h5>
-					<h5 className="card-title">{userName}</h5>
+				<div className="container mt-4 card-body">
+					<h6 className="card-title">{firstName}</h6>
+					<h6 className="card-title">{lastName}</h6>
+					<h4 className="card-title">{userName}</h4>
 					<p className="card-text">{city}</p>
 				</div>
 			</div>

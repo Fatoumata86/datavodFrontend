@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 
-import "./UsersPage.css";
-
 export default function UsersPage() {
 	const [users, setUsers] = useState([]);
 	useEffect(() => {
